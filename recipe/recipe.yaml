@@ -2,15 +2,15 @@ schema_version: 1
 
 context:
   name: azure-monitor-query
-  version: 1.4.1
+  version: 1.2.0
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/azure_monitor_query-${{ version }}.tar.gz
-  sha256: 71824e2b577d25df0d3bebbbb054c06a1ae3ebcb91831a9bac0bb344d0addf68
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/azure-monitor-query-${{ version }}.zip
+  sha256: 2c57432443f203069e64e500c7e958ca31650f641950515ffe65555ba134c371
 
 build:
   number: 0
@@ -24,9 +24,9 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - azure-core >=1.28.0
+    - azure-core >=1.24.0,<2.0
     - isodate >=0.6.0
-    - typing_extensions >=4.0.1
+    - typing-extensions >=4.0.1
 
 tests:
   - python:
